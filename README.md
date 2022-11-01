@@ -91,3 +91,14 @@ new HtmlProgressIndicatorPlugin({
   template: './path/to/template.html',
 });
 ```
+
+The IDs in the following HTML will be replaced with the correct IDs.
+
+```html
+<div
+  class="fixed bottom-0 right-0 m-3 h-4 px-2 bg-white border border-grey-200 flex gap-1"
+>
+  <div class="text-grey-800 text-semibold" id="{{PROGRESS_ID}}"></div>
+  <div class="text-grey-500" id="{{MSG_ID}}"></div>
+</div>
+```

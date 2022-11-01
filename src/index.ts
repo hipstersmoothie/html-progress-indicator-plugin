@@ -48,7 +48,9 @@ export class HtmlProgressIndicatorPlugin {
             this.options.placeholder,
             /* html */
             `
-              ${this.indicatorTemplate} 
+              ${this.indicatorTemplate
+                .replace('{{PROGRESS_ID}}', PROGRESS_ID)
+                .replace('{{MSG_ID}}', MSG_ID)} 
 
               <script>
                   // Open up a websocket connection to webpack-dev-server
