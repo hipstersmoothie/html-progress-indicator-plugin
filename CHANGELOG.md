@@ -1,3 +1,15 @@
+# v0.1.5 (Tue Nov 01 2022)
+
+#### ⚠️ Pushed to `main`
+
+- add image ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.1.4 (Tue Nov 01 2022)
 
 #### ⚠️ Pushed to `main`
