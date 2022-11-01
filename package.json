@@ -12,9 +12,9 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build && cp src/indicator-template.html dist",
+    "build": "tsdx build && cp src/indicator-template.html dist/",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "prepare": "yarn build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
