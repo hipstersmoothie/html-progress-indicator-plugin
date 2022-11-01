@@ -59,7 +59,7 @@
     "html-webpack-plugin": "^5",
     "webpack": "^5"
   },
-  "repository": "hipstersmoothie/html-progress-indicator",
+  "repository": "hipstersmoothie/html-progress-indicator-plugin",
   "auto": {
     "plugins": [
       "npm",
