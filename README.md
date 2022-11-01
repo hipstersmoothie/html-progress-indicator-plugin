@@ -3,6 +3,8 @@
 A webpack plugin that display the build progress inside the app without having to open the console.
 This plugin requires you to also use [`html-webpack-plugin`](https://www.npmjs.com/package/html-webpack-plugin).
 
+![A toast displaying the re-build progress](https://github.com/hipstersmoothie/html-progress-indicator-plugin/blob/main/assets/CleanShot%202022-11-01%20at%2001.18.57%402x.png?raw=true)
+
 ## Installation
 
 ```sh
