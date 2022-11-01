@@ -18,7 +18,7 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@types/webpack": "^5",
     "html-webpack-plugin": "^5",
     "webpack": "^5"
@@ -54,7 +54,10 @@
     "size-limit": "^8.1.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.1",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "@types/webpack": "^5",
+    "html-webpack-plugin": "^5",
+    "webpack": "^5"
   },
   "repository": "hipstersmoothie/html-progress-indicator",
   "auto": {
