@@ -1,3 +1,15 @@
+# v0.1.6 (Tue Nov 01 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix repo ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.1.5 (Tue Nov 01 2022)
 
 #### ⚠️ Pushed to `main`
