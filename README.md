@@ -63,6 +63,11 @@ new HtmlProgressIndicatorPlugin({
 
 If you want to customize the look of the indicator use the `template` option.
 
+The plugin comes with 2 default progress indicators:
+
+- `default` - What's pictured above
+- `nyan` - A nyan cat goes across the screen showing the progress
+
 #### As String
 
 Define your custom template directly in your config (or use a templating library that produces HTML)
