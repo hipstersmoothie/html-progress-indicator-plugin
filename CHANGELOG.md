@@ -1,3 +1,15 @@
+# v0.2.0 (Tue Nov 01 2022)
+
+#### 🚀 Enhancement
+
+- add nyan [#1](https://github.com/hipstersmoothie/html-progress-indicator-plugin/pull/1) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.1.6 (Tue Nov 01 2022)
 
 #### ⚠️ Pushed to `main`
