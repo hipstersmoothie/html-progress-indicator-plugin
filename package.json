@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build && cp src/indicator-template.html dist",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "dependencies": {
+    "@types/webpack": "^5",
+    "html-webpack-plugin": "^5",
+    "webpack": "^5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "html-progress-indicator-plugin",
+  "author": "Andrew Lisowski",
+  "module": "dist/html-progress-indicator-plugin.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/html-progress-indicator-plugin.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/html-progress-indicator-plugin.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.1.0",
+    "auto": "^10.37.6",
+    "husky": "^8.0.1",
+    "size-limit": "^8.1.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.8.4"
+  },
+  "repository": "hipstersmoothie/html-progress-indicator",
+  "auto": {
+    "plugins": [
+      "npm",
+      "released"
+    ]
+  }
+}

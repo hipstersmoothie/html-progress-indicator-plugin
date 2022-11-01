@@ -1,0 +1,36 @@
+<style>
+  .webpack-progress-indicator {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 16px;
+    height: 40px;
+    padding: 0 8px;
+    background: white;
+    border: 1px solid #ccc;
+    align-items: center;
+    gap: 8px;
+    z-index: 999999999;
+    display: none;
+    width: min(calc(100vw - 32px), 400px);
+    font-family: system-ui, ui-monospace;
+    border-radius: 4px;
+  }
+
+  .webpack-progress-percentage {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .webpack-progress-message {
+    font-size: 14px;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+</style>
+
+<div class="webpack-progress-indicator">
+  <div class="webpack-progress-percentage" id="${PROGRESS_ID}"></div>
+  <div class="webpack-progress-message" id="${MSG_ID}"></div>
+</div>
