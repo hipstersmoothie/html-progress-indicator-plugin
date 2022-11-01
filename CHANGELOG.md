@@ -1,3 +1,16 @@
+# v0.1.4 (Tue Nov 01 2022)
+
+#### ⚠️ Pushed to `main`
+
+- make deps peers for easier install ([@hipstersmoothie](https://github.com/hipstersmoothie))
+- fix ids ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.1.3 (Tue Nov 01 2022)
 
 #### ⚠️ Pushed to `main`
