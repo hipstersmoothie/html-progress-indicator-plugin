@@ -1,0 +1,138 @@
+<style>
+  .nyan {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: fit-content;
+    align-items: center;
+    height: 200px;
+    width: 100vw;
+    left: -136px;
+    display: flex;
+  }
+
+  .percentage {
+    display: none;
+  }
+
+  .tail {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: -1;
+  }
+
+  .tail-1 {
+    display: flex;
+    width: fit-content;
+    animation: flow-left 3s linear infinite;
+  }
+
+  .tail-2 {
+    display: flex;
+    width: fit-content;
+    animation: flow-left-2 3s linear infinite;
+  }
+
+  .cat {
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  .rainbow-section {
+    height: 120px;
+    width: var(--section-width);
+
+    background: linear-gradient(red, red), linear-gradient(orange, orange),
+      linear-gradient(yellow, yellow), linear-gradient(green, green),
+      linear-gradient(blue, blue), linear-gradient(violet, violet);
+
+    background-size: var(--section-width) 20px, var(--section-width) 20px,
+      var(--section-width) 20px, var(--section-width) 20px,
+      var(--section-width) 20px, var(--section-width) 20px;
+
+    background-position: 0px 0px, 0px 20px, 0px 40px, 0px 60px, 0px 80px,
+      0px 100px;
+    background-repeat: no-repeat;
+  }
+
+  .tail-2 .rainbow-section:nth-child(even),
+  .tail-1 .rainbow-section:nth-child(even) {
+    margin-top: 10px;
+  }
+
+  @keyframes flow-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes flow-left-2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div class="nyan" id="{{WRAPPER_ID}}">
+  <div class="percentage" id="{{MSG_ID}}"></div>
+  <div class="percentage" id="{{PROGRESS_ID}}"></div>
+  <div class="tail">
+    <div class="tail-1"></div>
+    <div class="tail-2"></div>
+  </div>
+  <div class="cat">
+    <img src="https://www.nyan.cat/cats/original.gif" />
+  </div>
+</div>
+
+<script>
+  const nyan = document.querySelector('.nyan');
+  const tail = document.querySelector('.tail');
+  const cat = document.querySelector('.cat');
+  const tail1 = document.querySelector('.nyan .tail-1');
+  const tail2 = document.querySelector('.nyan .tail-2');
+  let sections = 20;
+  let sectionWidth = window.innerWidth / 20;
+
+  nyan.style.setProperty('--section-width', `${sectionWidth}px`);
+
+  while (sections--) {
+    const div = document.createElement('div');
+    div.className = 'rainbow-section';
+    tail1.appendChild(div);
+    const div2 = document.createElement('div');
+    div2.className = 'rainbow-section';
+    tail2.appendChild(div2);
+  }
+
+  // identify an element to observe
+  const progress = document.getElementById('{{PROGRESS_ID}}');
+
+  // create a new instance of 'MutationObserver' named 'observer',
+  // passing it a callback function
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    const percentage = Number(
+      mutationsList[0].target.textContent.replace('%', '')
+    );
+    tail.style.width = `${percentage}vw`;
+    cat.style.left = `calc(${percentage}vw - 272px)`;
+  });
+
+  // call 'observe' on that MutationObserver instance,
+  // passing it the element to observe, and the options object
+  observer.observe(progress, {
+    characterData: true,
+    childList: true,
+    subtree: true,
+    attributes: false,
+  });
+</script>

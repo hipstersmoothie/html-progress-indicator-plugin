@@ -5,6 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
+export const WRAPPER_ID = 'webpack-progress-indicator-wrapper';
 export const MSG_ID = 'webpack-progress-indicator-message';
 export const PROGRESS_ID = 'webpack-progress-indicator-percentage';
 
@@ -12,12 +13,21 @@ interface ReloadIndicatorPluginOptions {
   /** The placeholder in the HTML that will be replaced with the reload indicator */
   placeholder?: string;
   /** The template for the reload indicator. A path or HTML string */
-  template?: string;
+  template?: string | 'nyan';
 }
+
+const defaultIndicator = path.join(
+  __dirname,
+  '../variants/indicator-template.html'
+);
+const nyanIndicator = path.join(
+  __dirname,
+  '../variants/nyan-indicator-template.html'
+);
 
 const defaultOptions: Required<ReloadIndicatorPluginOptions> = {
   placeholder: '<!-- reload-indicator-placeholder -->',
-  template: path.join(__dirname, 'indicator-template.html'),
+  template: defaultIndicator,
 };
 
 export class HtmlProgressIndicatorPlugin {
@@ -27,9 +37,12 @@ export class HtmlProgressIndicatorPlugin {
 
   constructor(options: ReloadIndicatorPluginOptions = {}) {
     this.options = { ...defaultOptions, ...options };
-    this.indicatorTemplate = fs.existsSync(this.options.template)
-      ? fs.readFileSync(this.options.template, 'utf8')
-      : this.options.template;
+    this.indicatorTemplate =
+      this.options.template === 'nyan'
+        ? fs.readFileSync(nyanIndicator, 'utf8')
+        : fs.existsSync(this.options.template)
+        ? fs.readFileSync(this.options.template, 'utf8')
+        : this.options.template;
   }
 
   apply(compiler: webpack.Compiler) {
@@ -49,8 +62,9 @@ export class HtmlProgressIndicatorPlugin {
             /* html */
             `
               ${this.indicatorTemplate
-                .replace('{{PROGRESS_ID}}', PROGRESS_ID)
-                .replace('{{MSG_ID}}', MSG_ID)} 
+                .replaceAll('{{PROGRESS_ID}}', PROGRESS_ID)
+                .replaceAll('{{WRAPPER_ID}}', WRAPPER_ID)
+                .replaceAll('{{MSG_ID}}', MSG_ID)} 
 
               <script>
                   // Open up a websocket connection to webpack-dev-server
@@ -58,7 +72,7 @@ export class HtmlProgressIndicatorPlugin {
 
                   socket.addEventListener('message', (message) => {
                       const event = JSON.parse(message.data);
-                      const wrapper = document.querySelector('.webpack-progress-indicator');
+                      const wrapper = document.getElementById('${WRAPPER_ID}');
                       const msg = document.getElementById('${MSG_ID}');
                       const progress = document.getElementById('${PROGRESS_ID}');
 
