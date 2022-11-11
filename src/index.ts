@@ -44,7 +44,7 @@ export class HtmlProgressIndicatorPlugin {
         ? fs.readFileSync(defaultIndicator, 'utf8')
         : fs.existsSync(this.options.template)
         ? fs.readFileSync(this.options.template, 'utf8')
-        : this.options.template;
+        : this.options.template || fs.readFileSync(defaultIndicator, 'utf8');
   }
 
   apply(compiler: webpack.Compiler) {
