@@ -1,3 +1,15 @@
+# v0.2.1 (Fri Nov 11 2022)
+
+#### 🐛 Bug Fix
+
+- fix loading default when default specified [#2](https://github.com/hipstersmoothie/html-progress-indicator-plugin/pull/2) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.2.0 (Tue Nov 01 2022)
 
 #### 🚀 Enhancement
