@@ -40,6 +40,8 @@ export class HtmlProgressIndicatorPlugin {
     this.indicatorTemplate =
       this.options.template === 'nyan'
         ? fs.readFileSync(nyanIndicator, 'utf8')
+        : this.options.template === 'default'
+        ? fs.readFileSync(defaultIndicator, 'utf8')
         : fs.existsSync(this.options.template)
         ? fs.readFileSync(this.options.template, 'utf8')
         : this.options.template;
