@@ -49,17 +49,20 @@ export class HtmlProgressIndicatorPlugin {
       HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
         this.name,
         (data, cb) => {
-          // Get configured socket URL
-          const host =
-            compilation.options.devServer?.client?.webSocketURL?.hostname ||
-            'localhost';
-          const port =
-            compilation.options.devServer?.client?.webSocketURL?.port || 8080;
+          if (compilation.options.mode === 'production') {
+            data.html = data.html.replace(this.options.placeholder, '');
+          } else {
+            // Get configured socket URL
+            const host =
+              compilation.options.devServer?.client?.webSocketURL?.hostname ||
+              'localhost';
+            const port =
+              compilation.options.devServer?.client?.webSocketURL?.port || 8080;
 
-          data.html = data.html.replace(
-            this.options.placeholder,
-            /* html */
-            `
+            data.html = data.html.replace(
+              this.options.placeholder,
+              /* html */
+              `
               ${this.indicatorTemplate
                 .replaceAll('{{PROGRESS_ID}}', PROGRESS_ID)
                 .replaceAll('{{WRAPPER_ID}}', WRAPPER_ID)
@@ -89,7 +92,9 @@ export class HtmlProgressIndicatorPlugin {
                   });
               </script>
             `
-          );
+            );
+          }
+
           cb(null, data);
         }
       );
