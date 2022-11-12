@@ -9,7 +9,7 @@
     height: 200px;
     width: 100vw;
     left: -136px;
-    display: flex;
+    display: none;
   }
 
   .percentage {
@@ -82,9 +82,9 @@
   }
 </style>
 
-<div class="nyan" id="{{WRAPPER_ID}}">
-  <div class="percentage" id="{{MSG_ID}}"></div>
+<div class="nyan webpack-progress-indicator" id="{{WRAPPER_ID}}">
   <div class="percentage" id="{{PROGRESS_ID}}"></div>
+  <div class="percentage" id="{{MSG_ID}}"></div>
   <div class="tail">
     <div class="tail-1"></div>
     <div class="tail-2"></div>
@@ -115,7 +115,7 @@
   }
 
   // identify an element to observe
-  const progress = document.getElementById('{{PROGRESS_ID}}');
+  const progress = document.getElementById('{{MSG_ID}}');
 
   // create a new instance of 'MutationObserver' named 'observer',
   // passing it a callback function
