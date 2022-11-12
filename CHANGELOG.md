@@ -1,3 +1,15 @@
+# v0.3.0 (Sat Nov 12 2022)
+
+#### 🚀 Enhancement
+
+- remove placeholder in prod mode [#6](https://github.com/hipstersmoothie/html-progress-indicator-plugin/pull/6) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.2.4 (Sat Nov 12 2022)
 
 #### 🐛 Bug Fix
