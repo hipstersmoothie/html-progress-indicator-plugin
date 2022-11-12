@@ -1,3 +1,15 @@
+# v0.2.4 (Sat Nov 12 2022)
+
+#### 🐛 Bug Fix
+
+- fix progress [#5](https://github.com/hipstersmoothie/html-progress-indicator-plugin/pull/5) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.2.3 (Sat Nov 12 2022)
 
 #### 🐛 Bug Fix
