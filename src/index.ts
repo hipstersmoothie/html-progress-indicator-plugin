@@ -20,10 +20,7 @@ const defaultIndicator = path.join(
   __dirname,
   '../variants/indicator-template.html'
 );
-const nyanIndicator = path.join(
-  __dirname,
-  '../variants/nyan-indicator-template.html'
-);
+const nyanIndicator = path.join(__dirname, '../variants/nyan-indicator.html');
 
 const defaultOptions: Required<ReloadIndicatorPluginOptions> = {
   placeholder: '<!-- reload-indicator-placeholder -->',
