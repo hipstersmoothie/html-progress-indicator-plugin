@@ -10,6 +10,7 @@
     width: 100vw;
     left: -136px;
     display: none;
+    z-index: 99999999;
   }
 
   .percentage {
@@ -115,7 +116,7 @@
   }
 
   // identify an element to observe
-  const progress = document.getElementById('{{MSG_ID}}');
+  const progress = document.getElementById('{{PROGRESS_ID}}');
 
   // create a new instance of 'MutationObserver' named 'observer',
   // passing it a callback function
