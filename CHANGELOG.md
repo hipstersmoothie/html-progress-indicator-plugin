@@ -1,3 +1,15 @@
+# v0.3.1 (Mon May 15 2023)
+
+#### ⚠️ Pushed to `main`
+
+- support https local dev ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.3.0 (Sat Nov 12 2022)
 
 #### 🚀 Enhancement
