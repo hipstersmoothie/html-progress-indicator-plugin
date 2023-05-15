@@ -58,6 +58,9 @@ export class HtmlProgressIndicatorPlugin {
               'localhost';
             const port =
               compilation.options.devServer?.client?.webSocketURL?.port || 8080;
+            const protocol =
+              compilation.options.devServer?.client?.webSocketURL?.protocol ||
+              'ws';
 
             data.html = data.html.replace(
               this.options.placeholder,
@@ -70,7 +73,7 @@ export class HtmlProgressIndicatorPlugin {
 
               <script>
                   // Open up a websocket connection to webpack-dev-server
-                  let socket = new WebSocket('ws://${host}:${port}/ws');
+                  let socket = new WebSocket('${protocol}://${host}:${port}/ws');
 
                   socket.addEventListener('message', (message) => {
                       const event = JSON.parse(message.data);
