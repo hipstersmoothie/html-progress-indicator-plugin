@@ -42,6 +42,54 @@
     transform: translate(50%, -50%);
   }
 
+  .cat-404 {
+    transform: translate(50%, -80%);
+  }
+
+  .cat-balloon {
+    transform: translate(84%, -73%);
+  }
+
+  .cat-bday {
+    transform: translate(50%, -71%);
+  }
+
+  .cat-daft {
+    transform: translate(50%, -65%);
+  }
+
+  .cat-dub {
+    transform: scale(1.5) translate(26%, -50%);
+  }
+
+  .cat-fat {
+    transform: scale(1.5) translate(74%, -50%);
+  }
+
+  .cat-fiesta {
+    transform: scale(2.5) translate(-24%, -50%);
+  }
+
+  .cat-nyaninja {
+    transform: scale(1.5) translate(50%, -43%);
+  }
+
+  .cat-manyan {
+    transform: translate(50%, -75%);
+  }
+
+  .cat-paddy {
+    transform: translate(50%, -67%);
+  }
+
+  .cat-paddy {
+    transform: translate(50%, -67%);
+  }
+
+  .cat-pirate {
+    transform: scale(1.5) translate(19%, -45%);
+  }
+
   .rainbow-section {
     height: 120px;
     width: var(--section-width);
@@ -90,12 +138,76 @@
     <div class="tail-1"></div>
     <div class="tail-2"></div>
   </div>
-  <div class="cat">
-    <img src="https://www.nyan.cat/cats/original.gif" />
+  <div id="cat-wrapper" class="cat">
+    <img id="cat-img" src="https://www.nyan.cat/cats/original.gif" />
   </div>
 </div>
 
 <script>
+  const variants = [
+    '404',
+    'america',
+    'balloon',
+    'bday',
+    'breakfast',
+    'daft',
+    'dub',
+    'easter',
+    'elevator',
+    'fat',
+    'fiesta',
+    'floppy',
+    'ganja',
+    'gb',
+    'grumpy',
+    'j5',
+    'jacksnyan',
+    'jamaicnyan',
+    'jazz',
+    'jazzcat',
+    'manyan',
+    'melon',
+    'mexinyan',
+    'mummy',
+    'newyear',
+    'nyanamerica',
+    'nyancat',
+    'nyancoin',
+    'nyandoge',
+    'nyaninja',
+    'nyanvirus',
+    'oldnewyear',
+    'oldnyan',
+    'original',
+    'paddy',
+    'pikanyan',
+    'pirate',
+    'pumpkin',
+    'rasta',
+    'retro',
+    'sad',
+    'slomo',
+    'smooth',
+    'smurfcat',
+    'tacnayn',
+    'technyancolor',
+    'toaster',
+    'vday',
+    'watermelon',
+    'xmasold',
+    'zombie',
+  ];
+
+  function setRandomCatImage() {
+    const catImg = document.getElementById('cat-img');
+    const randomVariant = variants[Math.floor(Math.random() * variants.length)];
+    catImg.src = `https://www.nyan.cat/cats/${randomVariant}.gif`;
+    const catWrapper = document.getElementById('cat-wrapper');
+    catWrapper.className = `cat cat-${randomVariant}`;
+  }
+
+  setRandomCatImage();
+
   const nyan = document.querySelector('.nyan');
   const tail = document.querySelector('.tail');
   const cat = document.querySelector('.cat');
@@ -126,6 +238,10 @@
     );
     tail.style.width = `${percentage}vw`;
     cat.style.left = `calc(${percentage}vw - 272px)`;
+
+    if (percentage === 100) {
+      setRandomCatImage();
+    }
   });
 
   // call 'observe' on that MutationObserver instance,
