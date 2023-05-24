@@ -1,3 +1,15 @@
+# v0.4.0 (Wed May 24 2023)
+
+#### 🚀 Enhancement
+
+- add nyan variants [#7](https://github.com/hipstersmoothie/html-progress-indicator-plugin/pull/7) ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+#### Authors: 1
+
+- Andrew Lisowski ([@hipstersmoothie](https://github.com/hipstersmoothie))
+
+---
+
 # v0.3.1 (Mon May 15 2023)
 
 #### ⚠️ Pushed to `main`
